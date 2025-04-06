@@ -138,3 +138,4 @@ function wrapWithModifiers(base) {
 
     return base;
 }
+

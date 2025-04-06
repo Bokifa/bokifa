@@ -4,11 +4,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-export const LanguageSelect = ({defaultLanguage, children, isPending, ...props}) => {
+export const LanguageSelect = ({defaultLanguage, children, isPending,selectTriggerProps, className, ...props}) => {
 
 	return (
 		<Select value={defaultLanguage} {...props}>
-			<SelectTrigger className="w-[140px] cursor-pointer select-none border-none shadow-none">
+			<SelectTrigger className={cn("w-[140px] cursor-pointer select-none border-none shadow-none")} {...selectTriggerProps}>
 				<SelectValue placeholder={defaultLanguage} defaultValue={defaultLanguage}>
 					{props?.t(defaultLanguage)}
 				</SelectValue>
