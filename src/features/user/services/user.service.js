@@ -2,7 +2,7 @@ import { z } from '@/lib/z'
 
 
 
-export const AuthService = {
+export const UserService = {
 	login: async (email, password) => {
 
 	},
@@ -10,6 +10,7 @@ export const AuthService = {
 	register: async (email, password) => {
 
 	},
+
 	logout: async () => {
 
 	},
@@ -23,5 +24,6 @@ export const AuthService = {
 
 	resetPassword: async (token, password) => {
 
-	}
+	},
+	
 }
