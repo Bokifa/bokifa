@@ -1,4 +1,4 @@
-import { LanguageChange } from '@/features/language/processes/language-change'
+import { Announcement } from '@/features/announcement'
 
 const Navbar = () => {
 	return (
@@ -11,10 +11,7 @@ const Navbar = () => {
 export const Header = () => {
 	return (
 		<header className='block min-h-14'>
-			<section aria-labelledby='head-banner'>
-				<LanguageChange/>
-				
-			</section>
+			<Announcement/>
 			<section>
 			</section>
 			<Navbar />

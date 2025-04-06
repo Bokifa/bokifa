@@ -2,7 +2,7 @@ import { useAnnouncement } from '../hooks/useAnnouncement';
 import { AnnouncementBanner } from '../ui/banner';
 
 export const Announcement = () => {
-    const {} = useAnnouncement();
+    const { announcements } = useAnnouncement();
 	
-    return <AnnouncementBanner />;
+    return <AnnouncementBanner announcements={announcements} />;
 };

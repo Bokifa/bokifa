@@ -1,4 +1,4 @@
-export async function fetchApi(url, { method = 'GET', data, accessToken, headers = {}, ...rest } = {}) {
+export async function api(url, { method = 'GET', data, accessToken, headers = {}, ...rest } = {}) {
     const isServer = typeof window === 'undefined';
 
     const isFormData = typeof FormData !== 'undefined' && data instanceof FormData;
