@@ -161,7 +161,7 @@
 }
 
 .container-center {
-  @apply sm:container mx-auto px-4;
+  @apply lg:container mx-auto px-4;
 }
 
 button {
