@@ -81,7 +81,7 @@ export const AnnouncementBanner = ({ announcements = [] }) => {
                         <motion.h3
                             key={currentIndex}
                             id={announcementSectionId}
-                            className="text-center text-sm md:text-lg font-bold truncate"
+                            className="text-center text-sm font-bold truncate"
                             variants={variants}
                             initial="enter"
                             animate="center"
