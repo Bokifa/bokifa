@@ -1,0 +1,13 @@
+import { CiHeart } from "react-icons/ci";
+
+
+export const WishlistIndicatorBtn = ({ count = 0}) => {
+	return (
+		<button className='relative'>
+			<CiHeart size={24}/>
+			<div className='w-2.5 h-2.5 rounded-full flex items-center justify-center-safe absolute right-0 top-0 bg-red-500 text-white truncate text-[8px] text-semibold'>
+				{count}
+			</div>
+		</button>
+	)
+}

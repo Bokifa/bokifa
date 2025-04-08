@@ -1,4 +1,5 @@
 
+import { CurrencyProvider } from '@/features/currency/processes/currency-provider';
 import { ProgressBar } from './progress-bar';
 
 function composeProviders(providers) {
@@ -7,7 +8,7 @@ function composeProviders(providers) {
     };
 }
 
-const CombinedProviders = composeProviders([ProgressBar]);
+const CombinedProviders = composeProviders([ProgressBar, CurrencyProvider]);
 
 const Providers = ({ children }) => {
     return <CombinedProviders>{children}</CombinedProviders>;

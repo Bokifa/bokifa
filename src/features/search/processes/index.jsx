@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CiSearch } from 'react-icons/ci';
+import { IoSearch } from 'react-icons/io5';
 
-import * as DrawerPrimitive from '@/components/ui/drawer';
-import useDebounce from '@/shared/hooks/useDebounce';
 import { Button } from '@/components/ui/button';
+import * as DrawerPrimitive from '@/components/ui/drawer';
+
+import useDebounce from '@/shared/hooks/useDebounce';
 
 const SearchDrawer = ({ open, setOpen }) => {
     return (
@@ -30,29 +31,32 @@ const SearchDrawer = ({ open, setOpen }) => {
     );
 };
 
-const SearchForm = ({input, setInput}) => {
+const SearchForm = ({ input, setInput }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
     };
     return (
-        <form className="hidden md:flex" onSubmit={handleSubmit}>
-            <label className="items-center border rounded-full bg-accent min-h-12 pl-4 flex-1">
-                <input 
-                    type="text" 
-                    className='focus:border-none focus-within:outline-0 h-full'
-                    autoCorrect="false" autoComplete="false" 
-                    value={input} 
+        <form className="hidden lg:flex flex-1" onSubmit={handleSubmit}>
+            <label className="bg-accent min-h-12 flex-1 items-center rounded-full border pl-4 text-sm flex">
+                <input
+                    type="text"
+                    className="h-full focus-within:outline-0 focus:border-none flex-1"
+                    autoCorrect="false"
+                    autoComplete="false"
+                    value={input}
                     onChange={(e) => setInput(e.target.value)}
                 />
-                <Button type='submit' variant="secondary" className={'h-full items-center px-6 flex-1'}>
-                    <CiSearch  size={22}/>
-                    Search
+                <Button type="submit" className="h-full">
+                    <span className="flex gap-1 px-2 items-center">
+                        <IoSearch size={22} />
+                        Search
+                    </span>
                 </Button>
             </label>
         </form>
     );
 };
-export const SearchProcesses = ({ searchInput }) => {
+export const SearchProcesses = () => {
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState('');
     const debouncedInput = useDebounce(input, 300);
@@ -64,10 +68,10 @@ export const SearchProcesses = ({ searchInput }) => {
     }, [debouncedInput]);
     return (
         <>
-            <button onClick={() => setOpen(true)} className="block cursor-pointer md:hidden">
-                <CiSearch />
+            <button onClick={() => setOpen(true)} className="block cursor-pointer lg:hidden">
+                <IoSearch />
             </button>
-            <SearchForm {...{input, setInput}}/>
+            <SearchForm {...{ input, setInput }} />
             <SearchDrawer {...{ open, setOpen }} />
         </>
     );
