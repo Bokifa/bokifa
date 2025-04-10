@@ -25,10 +25,10 @@ const navbarLinks = [
         label: 'FAQ',
     },
 ];
-
+const phoneNumber = '+84 2500 888 33'
 export const HeaderNavbar = () => {
     return (
-        <nav className="container-center lg:flex hidden py-3">
+        <nav className="container-center lg:flex justify-between hidden py-3">
             <ul className="flex gap-7 text-[16px] font-semibold">
                 {navbarLinks?.map((link) => (
                     <li key={link.href} className="hover:text-primary transition-all">
@@ -36,6 +36,11 @@ export const HeaderNavbar = () => {
                     </li>
                 ))}
             </ul>
+            
+            <span className='flex items-center gap-1'>
+                Need help? Call Us:
+                <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+            </span>
         </nav>
     );
 };

@@ -8,7 +8,7 @@ export default async function Layout({ children, params }) {
         notFound();
     }
 	return (
-		<div className='grid min-h-screen grid-rows-[auto_1fr_auto]'>
+		<div className='grid min-h-screen grid-rows-[auto_auto_1fr_auto]'>
 			<Header />
 			{children}
 			<Footer/>

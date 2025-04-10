@@ -1,9 +1,10 @@
-import { useAnnouncement } from '../hooks/useAnnouncement';
+
+import { AnnouncementService } from '../services/announcement.service';
 import { AnnouncementBanner } from '../ui/banner';
 
 export const Announcement = async () => {
-    const { announcements } = await useAnnouncement();
-	console.log(announcements);
+    const response = await AnnouncementService.getAnnouncements();
+	const announcements = response?.flatMap(res => res.content)
     
     return <AnnouncementBanner announcements={announcements} />;
 };

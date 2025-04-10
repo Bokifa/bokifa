@@ -8,6 +8,8 @@ export const LOCALES = {
 	RU: 'ru'
 } ;
 
+
+
 export const ALL_LOCALES = Object.values(LOCALES)
 
 export const routing = defineRouting({

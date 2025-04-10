@@ -9,7 +9,7 @@
     --breakpoint-lg: 64rem; /* 1024px — laptops */
     --breakpoint-xl: 80rem; /* 1280px — desktops */
     --breakpoint-2xl: 100rem; /* 1600px — large desktops */
-    --breakpoint-3xl: 120rem; /* 1920px — 4K monitors */
+    --breakpoint-3xl: 121rem; /* 1920px — 4K monitors */
 }
 @theme inline {
     --color-background: var(--background);
@@ -161,9 +161,60 @@
 }
 
 .container-center {
-  @apply lg:container mx-auto px-4;
+  @apply mx-auto px-4 lg:px-0 lg:max-w-[60rem] xl:max-w-[75rem] 2xl:max-w-[95rem] 3xl:max-w-[120rem];
 }
 
 button {
   cursor: pointer;
 }
+
+
+.custom-bullet {
+    @apply w-2 h-2 rounded-full bg-white/80 mx-1 inline-block transition-all duration-300 cursor-pointer;
+  }
+  
+  .custom-bullet-active {
+    @apply w-7 h-2 rounded-md bg-primary;
+  }
+
+
+.swiper-slide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+  }
+  
+  .swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+  }
+  
+  .swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+  }
+  
+  .swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+  }
+  
+  .swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+  }
+  
+  .swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+  }
+  
+  .swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+  }
+  
+  .swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+  }
+  
+  .swiper-slide:nth-child(9n) {
+    background-color: rgb(218, 12, 218);
+  }
+  
+  .swiper-slide:nth-child(10n) {
+    background-color: rgb(54, 94, 77);
+  }
+  

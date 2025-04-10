@@ -1,5 +1,8 @@
 import { Manrope } from 'next/font/google';
 
+import 'swiper/css';
+import 'swiper/css/effect-creative';
+
 import { LocaleLayout } from '@/features/language/processes/language.provider';
 
 import Providers from './(initialize)/providers';

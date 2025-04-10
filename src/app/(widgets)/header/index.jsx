@@ -5,10 +5,15 @@ import { HeaderNavbar } from './header-navbar';
 
 export const Header = () => {
     return (
-        <header className="block min-h-14 border-b border-b-accent">
-            <Announcement />
-            <HeaderMain />
-            <HeaderNavbar />
-        </header>
+        <>
+            <div className="block min-h-14 border-b border-b-accent">
+                <Announcement />
+            </div>
+            <header className='w-full sticky top-0 left-0 min-h-14 border-b border-b-accent bg-white'>
+                <HeaderMain />
+                <HeaderNavbar />
+                
+            </header>
+        </>
     );
 };
