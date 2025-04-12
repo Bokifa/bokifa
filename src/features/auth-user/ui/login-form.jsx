@@ -26,7 +26,7 @@ export const LoginForm = ({
 				</CardHeader>
 				<CardContent>
 				<form>
-					< className="flex flex-col gap-6">
+					<div className="flex flex-col gap-6">
 					<div className="grid gap-2">
 						<Label htmlFor="email">Email</Label>
 						<Input
@@ -54,7 +54,7 @@ export const LoginForm = ({
 					<Button variant="outline" className="w-full" type="button">
 						Go to main page
 					</Button>
-					
+					</div>
 					<div className="mt-4 text-center text-sm">
 					Don&apos;t have an account?{" "}
 					<a href="#" className="underline underline-offset-4">
