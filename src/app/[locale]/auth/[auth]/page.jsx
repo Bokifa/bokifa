@@ -1,11 +1,13 @@
-import { AUTH_SLUG } from '@/config/url.config';
+
+import { Login } from '@/features/auth-user/processes/login';
+import { AUTH_PAGES } from '@/features/auth-user/user.config';
 import { notFound } from 'next/navigation';
-import { useRouter } from 'next/router';
 
-const isAuthSlug = (value) => Object.values(AUTH_SLUG).includes(value);
+const isAuthSlug = (value) => Object.values(AUTH_PAGES).includes(value);
 
-export default function AuthPage() {
-	const { query } = useRouter();
+export default async function AuthPage({params}) {
+	const query = await params;
+	
 	if (!query?.auth && !isAuthSlug(query?.auth)) {
 		notFound();
 	}
@@ -13,6 +15,7 @@ export default function AuthPage() {
 
 	return (
 		<>
+			<Login/>
 		</>
 	)
 }
