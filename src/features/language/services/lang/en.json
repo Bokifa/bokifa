@@ -39,15 +39,27 @@
 	"Forms": {
 		"loginTitle": "Login",
 		"loginDescription": "Enter your email below to login to your account",
+		"registerDescription": "Enter your details below to create a new account",
 		"usernameOrEmail": "Username or Email",
 		"password": "Password",
 		"rememberMe": "Remember me",
 		"login": "Login",
 		"forgotPassword": "Forgot password?",
 		"dontHaveAccount": "Don't have an account?",
+		"haveAccount": "Have an account?",
 		"register": "Register",
 		"logout": "Logout",
-
+		"goToMainPage": "Go to main page",
+		"name": "Name",
+		"surname": "Surname",
+		"username": "Username",
+		"email": "Email",
+		"enterYourName": "Enter your name",
+		"enterYourSurname": "Enter your surname",
+		"enterYourUsername": "Enter your username",
+		"enterYourPassword": "Enter your password",
+		"confirmPassword": "Confirm password",
+		"enterYourEmail": "Enter your email",
 		
 		"Dictionary": {
 			"email": "Invalid email address",

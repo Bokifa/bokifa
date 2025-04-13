@@ -1,13 +1,33 @@
 export const z = {
-    string: () =>
-        wrapWithModifiers({
+    string: () => {
+        const base = {
             type: 'string',
             check: (value) => typeof value === 'string',
+            minLen: null,
+            maxLen: null,
+
+            min(n) {
+                this.minLen = n;
+                return this;
+            },
+
+            max(n) {
+                this.maxLen = n;
+                return this;
+            },
+
             parse(value) {
                 if (!this.check(value)) throw new Error(`Expected string, got ${typeof value}`);
+                if (this.minLen !== null && value.length < this.minLen)
+                    throw new Error(`String must be at least ${this.minLen} characters`);
+                if (this.maxLen !== null && value.length > this.maxLen)
+                    throw new Error(`String must be at most ${this.maxLen} characters`);
                 return value;
             },
-        }),
+        };
+
+        return wrapWithModifiers(base);
+    },
 
     number: () => {
         const base = {
@@ -86,36 +106,49 @@ export const z = {
             },
         }),
 
-    object: (shape) => ({
-        type: 'object',
-        shape,
-        parse(obj) {
-            if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
-                throw new Error(`Expected object`);
-            }
-
-            const result = {};
-            for (const key in shape) {
-                const field = shape[key];
-                const hasValue = key in obj;
-                const value = obj[key];
-
-                if (!hasValue && field._isRequired) {
-                    throw new Error(`Missing required field "${key}"`);
+    object: (shape) => {
+        const base = {
+            type: 'object',
+            shape,
+            parse(obj) {
+                if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
+                    throw new Error(`Expected object`);
                 }
 
-                if (hasValue) {
-                    try {
-                        result[key] = field.parse(value);
-                    } catch (err) {
-                        throw new Error(`Invalid field "${key}": ${err.message}`);
+                const result = {};
+                for (const key in shape) {
+                    const field = shape[key];
+                    const hasValue = key in obj;
+                    const value = obj[key];
+
+                    if (!hasValue && field._isRequired) {
+                        throw new Error(`Missing required field "${key}"`);
+                    }
+
+                    if (hasValue) {
+                        try {
+                            result[key] = field.parse(value);
+                        } catch (err) {
+                            throw new Error(`Invalid field "${key}": ${err.message}`);
+                        }
                     }
                 }
-            }
 
-            return result;
-        },
-    }),
+                return result;
+            },
+        };
+
+        return {
+            ...wrapWithModifiers(base),
+            safeParse(value) {
+                try {
+                    return { success: true, data: base.parse(value) };
+                } catch (err) {
+                    return { success: false, error: err.message };
+                }
+            },
+        };
+    },
 };
 
 function wrapWithModifiers(base) {
@@ -136,6 +169,13 @@ function wrapWithModifiers(base) {
         return this;
     };
 
+    base.safeParse = function (value) {
+        try {
+            return { success: true, data: this.parse(value) };
+        } catch (e) {
+            return { success: false, error: e.message };
+        }
+    };
+
     return base;
 }
-
