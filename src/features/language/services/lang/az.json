@@ -1,35 +1,14 @@
 {
     "Languages": {
-        "en": "English",
-        "ru": "Русский",
+        "en": "İngilis",
+        "ru": "Rus",
         "az": "Azərbaycan"
     },
 
-    "Dictionary": {
-        "usernameOrEmail": "İstifadəçi adı və ya Email",
-        "password": "Şifrə",
-        "rememberMe": "Məni xatırla",
-        "login": "Daxil ol",
-        "forgotPassword": "Şifrəni unutmusunuz?",
-        "dontHaveAccount": "Hesabınız yoxdur?",
-        "register": "Qeydiyyat",
-        "logout": "Çıxış",
-        "profile": "Profil",
-        "settings": "Ayarlar",
-        "language": "Dil",
-        "warning": "Xəbərdarlıq",
-        "email": "Yanlış email ünvanı",
-        "minLength": "Bu sahə ən az {0} simvol olmalıdır",
-        "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
-        "pattern": "Bu sahə tələb olunan formata uyğun deyil",
-        "min": "Bu sahə ən az {0} olmalıdır",
-        "max": "Bu sahə ən çox {0} ola bilər",
-        "step": "Bu sahə {0} ədədinin qatları olmalıdır"
-    },
     "Utils": {
         "loading": "Yüklənir...",
         "pleaseWait": "Zəhmət olmasa gözləyin...",
-        "pleaseWaitLoading": "Yüklənərkən zəhmət olmasa gözləyin...",
+        "pleaseWaitLoading": "Zəhmət olmasa yüklənmə tamamlanana qədər gözləyin...",
         "darkTheme": "Qaranlıq mövzu",
         "lightTheme": "Aydın mövzu",
         "theme": "Mövzu",
@@ -50,8 +29,40 @@
         "confirm": "Təsdiq et",
         "yes": "Bəli",
         "no": "Xeyr",
-        "ok": "OK",
+        "ok": "Ok",
         "error": "Xəta",
         "success": "Uğurla"
+    },
+
+    "Forms": {
+        "loginTitle": "Daxil ol",
+        "loginDescription": "Hesabınıza daxil olmaq üçün emailinizi daxil edin",
+        "usernameOrEmail": "İstifadəçi adı və ya Email",
+        "password": "Şifrə",
+        "rememberMe": "Məni xatırla",
+        "login": "Daxil ol",
+        "forgotPassword": "Şifrəni unutmusunuz?",
+        "dontHaveAccount": "Hesabınız yoxdur?",
+        "register": "Qeydiyyatdan keçin",
+        "logout": "Çıxış",
+		
+        "Dictionary": {
+            "email": "Yanlış email ünvanı",
+            "minLength": "Bu sahə ən az {0} simvol olmalıdır",
+            "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
+            "pattern": "Bu sahə tələb olunan formata uyğun deyil",
+            "min": "Ən azı {0} olmalıdır",
+            "max": "Ən çoxu {0} ola bilər",
+            "step": "Bu sahə {0} ədədinin qatları olmalıdır"
+        }
+    },
+
+    "Pages": {
+        "dashboard": "İdarə paneli",
+        "users": "İstifadəçilər",
+        "roles": "Rollar",
+        "permissions": "İcazələr",
+        "settings": "Ayarlar",
+        "profile": "Profil"
     }
 }

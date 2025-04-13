@@ -10,11 +10,15 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Link } from '@/features/navigation'
+import { useTranslations } from 'next-intl'
+import { APP_URLS } from '@/config/url.config'
 
 export const LoginForm = ({
   className,
   ...props
 }) => {
+	const t = useTranslations("Forms");
+	const dictionaryT = useTranslations("Dictionary");
 	return (
 		<div className={cn("flex flex-col gap-6", className)} {...props}>
 			<Card>
@@ -56,10 +60,9 @@ export const LoginForm = ({
 					</Button>
 					</div>
 					<div className="mt-4 text-center text-sm">
-					Don&apos;t have an account?{" "}
-					<a href="#" className="underline underline-offset-4">
-						Sign up
-					</a>
+						{'dontHaveAccount'} 
+						<Link href={APP_URLS.user.register} className="underline underline-offset-4">{chunks}</Link>
+						
 					</div>
 				</form>
 				</CardContent>
