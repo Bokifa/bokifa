@@ -1,7 +1,57 @@
 {
-	"Languages" : {
-		"en" : "English",
-		"ru" : "Русский",
-		"az" : "Azərbaycan"
-	}
+    "Languages": {
+        "en": "English",
+        "ru": "Русский",
+        "az": "Azərbaycan"
+    },
+
+    "Dictionary": {
+        "usernameOrEmail": "İstifadəçi adı və ya Email",
+        "password": "Şifrə",
+        "rememberMe": "Məni xatırla",
+        "login": "Daxil ol",
+        "forgotPassword": "Şifrəni unutmusunuz?",
+        "dontHaveAccount": "Hesabınız yoxdur?",
+        "register": "Qeydiyyat",
+        "logout": "Çıxış",
+        "profile": "Profil",
+        "settings": "Ayarlar",
+        "language": "Dil",
+        "warning": "Xəbərdarlıq",
+        "email": "Yanlış email ünvanı",
+        "minLength": "Bu sahə ən az {0} simvol olmalıdır",
+        "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
+        "pattern": "Bu sahə tələb olunan formata uyğun deyil",
+        "min": "Bu sahə ən az {0} olmalıdır",
+        "max": "Bu sahə ən çox {0} ola bilər",
+        "step": "Bu sahə {0} ədədinin qatları olmalıdır"
+    },
+    "Utils": {
+        "loading": "Yüklənir...",
+        "pleaseWait": "Zəhmət olmasa gözləyin...",
+        "pleaseWaitLoading": "Yüklənərkən zəhmət olmasa gözləyin...",
+        "darkTheme": "Qaranlıq mövzu",
+        "lightTheme": "Aydın mövzu",
+        "theme": "Mövzu",
+        "save": "Yadda saxla",
+        "cancel": "Ləğv et",
+        "close": "Bağla",
+        "edit": "Redaktə et",
+        "delete": "Sil",
+        "create": "Yarat",
+        "update": "Yenilə",
+        "search": "Axtar",
+        "sort": "Sırala",
+        "filter": "Filtrlə",
+        "reset": "Sıfırla",
+        "add": "Əlavə et",
+        "remove": "Sil",
+        "submit": "Təsdiqlə",
+        "confirm": "Təsdiq et",
+        "yes": "Bəli",
+        "no": "Xeyr",
+        "ok": "OK",
+        "error": "Xəta",
+        "success": "Uğurla"
+    }
 }

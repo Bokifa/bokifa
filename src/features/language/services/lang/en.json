@@ -3,5 +3,59 @@
 		"en" : "English",
 		"ru" : "Русский",
 		"az" : "Azərbaycan"
+	},
+
+	
+	"Dictionary": {
+		"usernameOrEmail": "Username or Email",
+		"password": "Password",
+		"rememberMe": "Remember me",
+		"login": "Login",
+		"forgotPassword": "Forgot password?",
+		"dontHaveAccount": "Don't have an account?",
+		"register": "Register",
+		"logout": "Logout",
+		"profile": "Profile",
+		"settings": "Settings",
+		"language": "Language",
+		"warning": "Warning",
+		"email": "Invalid email address",
+		"minLength": "This field must be at least {0} characters long",
+		"maxLength": "This field cannot be longer than {0} characters",
+		"pattern": "This field does not match the required format",
+		"min": "This field must be at least {0}",
+		"max": "This field cannot be greater than {0}",
+		"step": "This field must be a multiple of {0}"
+		
+	},
+
+
+	"Utils": {
+		"loading": "Loading...",
+		"pleaseWait": "Please wait...",
+		"pleaseWaitLoading": "Please wait while loading...",
+		"darkTheme": "Dark theme",
+		"lightTheme": "Light theme",
+		"theme": "Theme",
+		"save": "Save",
+		"cancel": "Cancel",
+		"close": "Close",
+		"edit": "Edit",
+		"delete": "Delete",
+		"create": "Create",
+		"update": "Update",
+		"search": "Search",
+		"sort": "Sort",
+		"filter": "Filter",
+		"reset": "Reset",
+		"add": "Add",
+		"remove": "Remove",
+		"submit": "Submit",
+		"confirm": "Confirm",
+		"yes": "Yes",
+		"no": "No",
+		"ok": "Ok",
+		"error": "Error",
+		"success": "Success"
 	}
 }

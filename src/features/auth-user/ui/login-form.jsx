@@ -28,12 +28,12 @@ export const LoginForm = ({
 				<form>
 					<div className="flex flex-col gap-6">
 					<div className="grid gap-2">
-						<Label htmlFor="email">Email</Label>
+						<Label htmlFor="email">UserName or Email</Label>
 						<Input
-						id="email"
-						type="email"
-						placeholder="m@example.com"
-						required
+							id="email"
+							type="email"
+							placeholder="m@example.com"
+							required
 						/>
 					</div>
 					<div className="grid gap-2">
