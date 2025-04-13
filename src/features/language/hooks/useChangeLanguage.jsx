@@ -1,8 +1,9 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/features/navigation';
 import { useTransition } from 'react';
 import { LOCALES } from './lang';
+import { permanentRedirect } from 'next/navigation';
 
 export const useChangeLanguage = () => {
 	const [isPending, startTransition] = useTransition();
@@ -11,11 +12,12 @@ export const useChangeLanguage = () => {
 
 	const onChangeLanguage = (locale) => {
 		startTransition(() => {
-			const segments = pathname.split('/');
-			segments[1] = locale;
-			const newPath = segments.join('/') || '/';
+			permanentRedirect(`/${locale}`);
+			// const segments = pathname.split('/');
+			// segments[1] = locale;
+			// const newPath = segments.join('/') || '/';
 
-			router.replace(newPath);
+			// router.replace(newPath);
 		});
 	};
 

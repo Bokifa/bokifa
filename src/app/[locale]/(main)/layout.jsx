@@ -1,5 +1,4 @@
-import { Footer } from '@/app/(widgets)';
-import { Header } from '@radix-ui/react-accordion';
+import { Footer, Header } from '@/app/(widgets)';
 
 export default function MainLayout({ children }) {
 	return (

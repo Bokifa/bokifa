@@ -6,16 +6,21 @@ export const LOCALES = {
 	AZ: 'az',
 	EN: 'en',
 	RU: 'ru'
-} ;
+};
 
 
 
-export const ALL_LOCALES = Object.values(LOCALES)
+export const ALL_LOCALES = ['az', 'en', 'ru'];
 
 export const routing = defineRouting({
     locales: ALL_LOCALES,
 
-    defaultLocale: LOCALES.AZ,
+    defaultLocale: LOCALES.EN,
+
+	pathnames: {
+		'/': '/',
+		'/[locale]/': '/:locale',
+	}
 });
 
 export const navigationWithLanguage = createNavigation(routing);
