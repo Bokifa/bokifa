@@ -1,5 +1,6 @@
-import { defineRouting } from 'next-intl/routing';
+
 import { createNavigation } from 'next-intl/navigation';
+import { defineRouting } from 'next-intl/routing';
 
 
 export const LOCALES = {
@@ -10,17 +11,12 @@ export const LOCALES = {
 
 
 
-export const ALL_LOCALES = ['az', 'en', 'ru'];
+export const ALL_LOCALES = Object.values(LOCALES);
 
 export const routing = defineRouting({
     locales: ALL_LOCALES,
 
     defaultLocale: LOCALES.EN,
-
-	pathnames: {
-		'/': '/',
-		'/[locale]/': '/:locale',
-	}
 });
 
 export const navigationWithLanguage = createNavigation(routing);

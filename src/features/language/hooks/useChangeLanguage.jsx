@@ -1,9 +1,9 @@
 'use client';
 
-import { usePathname, useRouter } from '@/features/navigation';
+import { useRouter } from '@/features/navigation';
 import { useTransition } from 'react';
 import { LOCALES } from './lang';
-import { permanentRedirect } from 'next/navigation';
+import { permanentRedirect, usePathname } from 'next/navigation';
 
 export const useChangeLanguage = () => {
 	const [isPending, startTransition] = useTransition();
@@ -20,7 +20,8 @@ export const useChangeLanguage = () => {
 			// router.replace(newPath);
 		});
 	};
-
+	console.log(pathname);
+	
 	return {
 		isPending,
 		onChangeLanguage,

@@ -1,4 +1,3 @@
-import { HTMLProps } from 'react';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -12,7 +11,9 @@ export async function LocaleLayout({
     htmlProps,
     htmlBodyProps,
 }) {
-
+    // if (!routing.locales.includes(locale)) {
+    //     notFound();
+    // }
     const messages = await getMessages();
 
     return (
