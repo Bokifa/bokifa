@@ -21,7 +21,7 @@ export const LoginForm = ({
   isPending,
   ...props
 }) => {
-	const t = useTranslations("Forms");
+	const t = useTranslations("Auth");
 	return (
 		<div className={cn("flex flex-col gap-6", className)} {...props}>
 			<Card>
@@ -52,7 +52,7 @@ export const LoginForm = ({
 								{t('forgotPassword')}
 							</Link>
 						</div>
-						<Input id="password" type="password" name="password" required />
+						<Input id="password" type="password" name="password" required autoComplete="off"/>
 					</div>
 					<div className="flex items-center space-x-2">
 						<Checkbox id="rememberMe" name="rememberMe" />

@@ -7,12 +7,12 @@ import { dataTransformToFormData } from '@/lib/utils';
 
 export const UserService = {
 	login: async (data) => {
-		const schema = z.object({
+		const loginSchema = z.object({
 			UsernameOrEmail: z.string(),
 			Password: z.string().min(8),
 			RememberMe: z.boolean().optional()
 		})
-		const parsed = schema.safeParse({
+		const parsed = loginSchema.safeParse({
 			UsernameOrEmail: data.email,
 			Password: data.password,
 			RememberMe: !!data.rememberMe
@@ -27,8 +27,33 @@ export const UserService = {
 		})
 	},
 	
-	register: async (email, password) => {
+	register: async (data) => {
+		const registerSchema = z.object({
+			Name: z.string().min(3),
+			Surname: z.string().min(3),
+			Username: z.string().min(3),
+			Email: z?.string(),
+			Password: z.string().min(8),
+			ConfirmPassword: z.string().min(8)
+		})
 
+		const parsed = registerSchema.safeParse({
+			Name: data.name,
+			Surname: data.surname,
+			Username: data.username,
+			Email: data.email,
+			Password: data.password,
+			ConfirmPassword: data.confirmPassword
+		});
+
+		if (!parsed.success) {
+			return Promise.reject(parsed.error);	
+		}
+
+		return api(USER_API_ENDPOINTS.register(), {
+			method: 'POST',
+			body: dataTransformToFormData(parsed.data)
+		})
 	},
 
 	logout: async () => {

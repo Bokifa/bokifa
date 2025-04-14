@@ -15,9 +15,12 @@ import { APP_URLS } from '@/config/url.config'
 
 export const RegisterForm = ({
 	className,
+	onSubmit,
+	getErrors,
+	isPending,
 	...props
 }) => {
-	const t = useTranslations("Forms");
+	const t = useTranslations("Auth");
 	const formItems  = [
 		{
 			id: "name",
@@ -64,7 +67,7 @@ export const RegisterForm = ({
 					<CardDescription>{t('registerDescription')}</CardDescription>
 				</CardHeader>
 				<CardContent>
-				<form>
+				<form onSubmit={onSubmit}>
 					<div className="flex flex-col gap-6">
 					{formItems.map((item) => (
 						<div className="grid gap-2" key={item.id}>
@@ -72,9 +75,12 @@ export const RegisterForm = ({
 							<Input
 								id={item.id}
 								type={item.type}
+								name={item.id}
 								placeholder={item.placeholder}
-								required
+								autoComplete="off"
+								// required
 							/>	
+							{getErrors(item.id)}
 						</div>
 					))}
 					<Button className="w-full" type="submit">

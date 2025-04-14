@@ -36,7 +36,7 @@
 
 
 
-	"Forms": {
+	"Auth": {
 		"loginTitle": "Login",
 		"loginDescription": "Enter your email below to login to your account",
 		"registerDescription": "Enter your details below to create a new account",
@@ -59,17 +59,18 @@
 		"enterYourUsername": "Enter your username",
 		"enterYourPassword": "Enter your password",
 		"confirmPassword": "Confirm password",
-		"enterYourEmail": "Enter your email",
+		"enterYourEmail": "Enter your email"
 		
-		"Dictionary": {
-			"email": "Invalid email address",
-			"minLength": "This field must be at least {0} characters long",
-			"maxLength": "This field cannot be longer than {0} characters",
-			"pattern": "This field does not match the required format",
-			"min": "This field must be at least {0}",
-			"max": "This field cannot be greater than {0}",
-			"step": "This field must be a multiple of {0}"
-		}
+	},
+	
+	"Validations": {
+		"email": "Invalid email address",
+		"minLength": "This field must be at least {0} characters long",
+		"maxLength": "This field cannot be longer than {0} characters",
+		"pattern": "This field does not match the required format",
+		"min": "This field must be at least {0}",
+		"max": "This field cannot be greater than {0}",
+		"step": "This field must be a multiple of {0}"
 	},
 	
 	"Pages": {

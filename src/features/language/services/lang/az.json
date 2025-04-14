@@ -34,7 +34,7 @@
         "success": "Uğurla"
     },
 
-    "Forms": {
+    "Auth": {
         "loginTitle": "Daxil ol",
         "loginDescription": "Hesabınıza daxil olmaq üçün emailinizi daxil edin",
 		"registerDescription": "Hesab yaratmaq üçün aşağıdakı məlumatları daxil edin",
@@ -57,17 +57,17 @@
 		"enterYourUsername": "İstifadəçi adınızı daxil edin",
 		"enterYourPassword": "Şifrənizi daxil edin",
 		"confirmPassword": "Şifrənizi təsdiq edin",
-		"enterYourEmail": "Emailinizi daxil edin",
-
-        "Dictionary": {
-            "email": "Yanlış email ünvanı",
-            "minLength": "Bu sahə ən az {0} simvol olmalıdır",
-            "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
-            "pattern": "Bu sahə tələb olunan formata uyğun deyil",
-            "min": "Ən azı {0} olmalıdır",
-            "max": "Ən çoxu {0} ola bilər",
-            "step": "Bu sahə {0} ədədinin qatları olmalıdır"
-        }
+		"enterYourEmail": "Emailinizi daxil edin"
+    },
+    
+    "Validations": {
+        "email": "Yanlış email ünvanı",
+        "minLength": "Bu sahə ən az {0} simvol olmalıdır",
+        "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
+        "pattern": "Bu sahə tələb olunan formata uyğun deyil",
+        "min": "Ən azı {0} olmalıdır",
+        "max": "Ən çoxu {0} ola bilər",
+        "step": "Bu sahə {0} ədədinin qatları olmalıdır"
     },
 
     "Pages": {
