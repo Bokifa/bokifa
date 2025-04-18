@@ -13,7 +13,12 @@ export const Register = () => {
 		const formData = new FormData(e.target);
 		const data = Object.fromEntries(formData.entries());
 		startTransition(() => {
-			UserService.register(data)
+			try {
+				const response = await UserService.register(data)
+				debugger
+			} catch (error) {
+				debugger
+			}
 		})
 		
 	}
