@@ -1,4 +1,10 @@
 import { Login} from './login';
-import { Register} from './register';
+
+const Register = () => {
+	return (
+		<></>
+	)
+
+}
 
 export { Login, Register }

@@ -8,18 +8,11 @@ import { UserService } from '../services/user.service';
 export const Register = () => {
 	const { getErrors, setErrors } = useValidationErrors();
 	const [isPending, startTransition] = useTransition();
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const data = Object.fromEntries(formData.entries());
-		startTransition(() => {
-			try {
-				const response = await UserService.register(data)
-				debugger
-			} catch (error) {
-				debugger
-			}
-		})
+		const response = await UserService.register(data)
 		
 	}
 	return (

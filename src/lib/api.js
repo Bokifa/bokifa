@@ -1,3 +1,5 @@
+
+
 export async function api(url, { method = 'GET', data, accessToken, headers = {}, ...rest } = {}) {
     const isServer = typeof window === 'undefined';
 

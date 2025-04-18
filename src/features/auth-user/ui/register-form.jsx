@@ -67,7 +67,7 @@ export const RegisterForm = ({
 					<CardDescription>{t('registerDescription')}</CardDescription>
 				</CardHeader>
 				<CardContent>
-				<form onSubmit={onSubmit}>
+				<form onSubmit={onSubmit} >
 					<div className="flex flex-col gap-6">
 					{formItems.map((item) => (
 						<div className="grid gap-2" key={item.id}>
