@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { BannerCarouselItem } from './banner-carousel-item';
 
 export const BannerCarousel = ({ banners }) => {
-    console.log(banners);
     
     const [activeIndex, setActiveIndex] = useState(0);
     const pagination = {
@@ -49,7 +48,7 @@ export const BannerCarousel = ({ banners }) => {
                             key={i}
                             className="flex items-center justify-center bg-gray-800 text-4xl font-bold text-white"
                         >
-                            <BannerCarouselItem isActive={activeIndex === i} banner={bannerItem}/>
+                            <BannerCarouselItem isActive={activeIndex === i} bannerItem={bannerItem}/>
                         </SwiperSlide>
                     ))}
                 <div className="swiper-pagination mt-4" />
