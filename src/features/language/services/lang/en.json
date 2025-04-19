@@ -64,13 +64,16 @@
 	},
 	
 	"Validations": {
+		"required": "This field is required",
 		"email": "Invalid email address",
-		"minLength": "This field must be at least {0} characters long",
-		"maxLength": "This field cannot be longer than {0} characters",
-		"pattern": "This field does not match the required format",
-		"min": "This field must be at least {0}",
-		"max": "This field cannot be greater than {0}",
-		"step": "This field must be a multiple of {0}"
+		"min": "Minimum is {length}",
+		"max": "Maximum is {length}",
+		"positive": "Must be a positive number",
+		"integer": "Must be an integer",
+		"passwordMin": "Password must be at least 8 characters",
+		"passwordUppercase": "Password must contain at least one uppercase letter",
+		"passwordNumber": "Password must contain at least one number",
+		"invalidEmail": "Invalid email address"
 	},
 	
 	"Pages": {

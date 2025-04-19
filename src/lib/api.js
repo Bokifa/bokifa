@@ -25,24 +25,21 @@ export async function api(url, { method = 'GET', data, accessToken, headers = {}
         const res = await fetch(url, options);
 
         let responseData;
-        const contentType = res.headers.get('content-type');
+        // const contentType = res.headers.get('content-type');
 
-        if (contentType?.includes('application/json')) {
-            responseData = await res.json();
-        } else {
-            responseData = await res.text();
-        }
+        responseData = await res.json();
+        // if (contentType?.includes('application/json')) {
+        // } else {
+        //     responseData = await res.text();
+        // }
 
         if (!res.ok) {
-            const error = new Error('API Error');
-            error.status = res.status;
-            error.data = responseData;
 
-            if (res.status === 400 && responseData?.errors) {
-                error.validationErrors = responseData.errors;
-            }
-
-            throw error;
+            throw {
+                validationErrors: responseData?.errors,
+                status: res.status,
+                statusText: res.statusText,
+            };
         }
 
         return responseData;

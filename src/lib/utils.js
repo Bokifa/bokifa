@@ -20,14 +20,19 @@ export function queryParamsBuilder(params) {
     return queryString ? `?${queryString}` : '';
 }
 
-
 export const dataTransformToFormData = (data) => {
     const form = new FormData();
 
     // Dynamically append fields
     Object.entries(data).forEach(([key, value]) => {
-      form.append(key, value);
-    }); 
+        form.append(key, value);
+    });
 
     return form;
-}
+};
+
+export const valuesTransformToFieldNames = (defaultValues) =>
+    Object.keys(defaultValues).reduce((acc, key) => {
+        acc[key] = key;
+        return acc;
+    }, {});

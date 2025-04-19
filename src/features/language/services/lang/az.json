@@ -61,13 +61,16 @@
     },
     
     "Validations": {
-        "email": "Yanlış email ünvanı",
-        "minLength": "Bu sahə ən az {0} simvol olmalıdır",
-        "maxLength": "Bu sahə ən çox {0} simvol ola bilər",
-        "pattern": "Bu sahə tələb olunan formata uyğun deyil",
-        "min": "Ən azı {0} olmalıdır",
-        "max": "Ən çoxu {0} ola bilər",
-        "step": "Bu sahə {0} ədədinin qatları olmalıdır"
+        "required": "Bu sahə mütləqdir",
+        "email": "Etibarsız email ünvanı",
+        "min": "Minimum {length} olmalıdır",
+        "max": "Maksimum {length} ola bilər",
+        "positive": "Müsbət ədəd olmalıdır",
+        "integer": "Tam ədəd olmalıdır",
+        "passwordMin": "Şifrə ən azı 8 simvoldan ibarət olmalıdır",
+        "passwordUppercase": "Şifrə ən azı bir böyük hərf içerməlidir",
+        "passwordNumber": "Şifrə ən azı bir rəqəm içerməlidir",
+        "invalidEmail": "Email adresi yanlışdır"
     },
 
     "Pages": {

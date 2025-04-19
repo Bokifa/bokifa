@@ -161,60 +161,17 @@
 }
 
 .container-center {
-  @apply mx-auto px-4 lg:px-0 lg:max-w-[60rem] xl:max-w-[75rem] 2xl:max-w-[95rem] 3xl:max-w-[120rem];
+    @apply 3xl:max-w-[120rem] mx-auto px-4 lg:max-w-[60rem] lg:px-0 xl:max-w-[75rem] 2xl:max-w-[95rem];
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-
 .custom-bullet {
-    @apply w-2 h-2 rounded-full bg-white/80 mx-1 inline-block transition-all duration-300 cursor-pointer;
-  }
-  
-  .custom-bullet-active {
-    @apply w-7 h-2 rounded-md bg-primary;
-  }
+    @apply mx-1 inline-block h-2 w-2 cursor-pointer rounded-full bg-white/80 transition-all duration-300;
+}
 
-
-.swiper-slide:nth-child(1n) {
-    background-color: rgb(206, 17, 17);
-  }
-  
-  .swiper-slide:nth-child(2n) {
-    background-color: rgb(0, 140, 255);
-  }
-  
-  .swiper-slide:nth-child(3n) {
-    background-color: rgb(10, 184, 111);
-  }
-  
-  .swiper-slide:nth-child(4n) {
-    background-color: rgb(211, 122, 7);
-  }
-  
-  .swiper-slide:nth-child(5n) {
-    background-color: rgb(118, 163, 12);
-  }
-  
-  .swiper-slide:nth-child(6n) {
-    background-color: rgb(180, 10, 47);
-  }
-  
-  .swiper-slide:nth-child(7n) {
-    background-color: rgb(35, 99, 19);
-  }
-  
-  .swiper-slide:nth-child(8n) {
-    background-color: rgb(0, 68, 255);
-  }
-  
-  .swiper-slide:nth-child(9n) {
-    background-color: rgb(218, 12, 218);
-  }
-  
-  .swiper-slide:nth-child(10n) {
-    background-color: rgb(54, 94, 77);
-  }
-  
+.custom-bullet-active {
+    @apply bg-primary h-2 w-7 rounded-md;
+}

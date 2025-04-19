@@ -1,9 +1,9 @@
-import { BannerCarousel } from '@/features/banner/banner-carousel';
+import { Banner } from '@/features/banner';
 
 export default async function Home() {
 	return (
 		<>
-			<BannerCarousel/>
+			<Banner />
 		</>
 	);
 }

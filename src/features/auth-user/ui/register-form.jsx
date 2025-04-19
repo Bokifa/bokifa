@@ -16,49 +16,23 @@ import { APP_URLS } from '@/config/url.config'
 export const RegisterForm = ({
 	className,
 	onSubmit,
-	getErrors,
+	errorsOnServer,
 	isPending,
+	form,
+	RegisterFormItems,
 	...props
 }) => {
 	const t = useTranslations("Auth");
-	const formItems  = [
-		{
-			id: "name",
-			label: "name",
-			placeholder: t("enterYourName"),
-			type: "text",
-		},
-		{
-			id: "surname",
-			label: "surname",
-			placeholder: t("enterYourSurname"),
-			type: "text",
-		},
-		{
-			id: "username",
-			label: "username",
-			placeholder: t("enterYourUsername"),
-			type: "text",
-		},
-		{
-			id: "email",
-			label: "email",
-			placeholder: "m@example.com",
-			type: "email",
-		},
-		{
-			id: "password",
-			label: "password",
-			placeholder: "**********",
-			type: "password",
-		},
-		{
-			id: "confirmPassword",
-			label: "confirmPassword",
-			placeholder: "**********",
-			type: "password",
-		}
-	]
+	const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = form;
+
+	console.log(errors);
+	
+	const formItems = RegisterFormItems(t);
+	
 	return (
 		<div className={cn("flex flex-col gap-6", className)} {...props}>
 			<Card>
@@ -67,28 +41,31 @@ export const RegisterForm = ({
 					<CardDescription>{t('registerDescription')}</CardDescription>
 				</CardHeader>
 				<CardContent>
-				<form onSubmit={onSubmit} >
+				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex flex-col gap-6">
-					{formItems.map((item) => (
-						<div className="grid gap-2" key={item.id}>
-							<Label htmlFor={item.id}>{t(`${item.label}`)}</Label>
-							<Input
-								id={item.id}
-								type={item.type}
-								name={item.id}
-								placeholder={item.placeholder}
-								autoComplete="off"
-								// required
-							/>	
-							{getErrors(item.id)}
-						</div>
-					))}
-					<Button className="w-full" type="submit">
-						{t('login')}
-					</Button>
-					<Button variant="outline" className="w-full" type="button" asChild>
-						<Link href={APP_URLS.home()}>{t('goToMainPage')}</Link>
-					</Button>
+						{formItems.map(({id, type, placeholder, label, ...itemProps}) => (
+							<div className="grid gap-2" key={id}>
+								<Label htmlFor={id}>{t(`${label}`)}</Label>
+								<Input
+									id={id}
+									type={type}
+									name={id}
+									placeholder={placeholder}
+									autoComplete="off"
+									{...register(id)}
+									{...itemProps}
+									// required
+								/>	
+								{errors[id] && (
+									<div className="text-red-500 text-sm">
+										{`${errors[id].message}`}
+									</div>
+								)}
+							</div>
+						))}
+						<Button className="w-full" type="submit" disabled={isPending}>
+							{t('login')}
+						</Button>
 					</div>
 					<div className="mt-4 text-center text-sm">
 						{t('haveAccount')} {' '}

@@ -13,38 +13,39 @@ import { Loader2 } from 'lucide-react';
 import { Link } from '@/features/navigation';
 import { APP_URLS } from '@/config/url.config';
 
-export const LoginForm = ({ form, onSubmit, isPending, error, className, ...props }) => {
+export const LoginForm = ({ form, onSubmit, isPending, error, className, fieldNames, ...props }) => {
     const t = useTranslations('Auth');
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = form;
-
+    console.log('errors', errors);
+    
     return (
         <div className={cn('flex flex-col gap-6', className)} {...props}>
             <Card>
                 <CardHeader>
                     <CardTitle className="text-2xl">{t('loginTitle')}</CardTitle>
-                    <CardDescription>{t('loginDescription')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
                         <div className="grid gap-2">
-                            <Label htmlFor="UsernameOrEmail">{t('usernameOrEmail')}</Label>
+                            <Label htmlFor={fieldNames?.UsernameOrEmail}>{t('usernameOrEmail')}</Label>
                             <Input
-                                id="UsernameOrEmail"
+                                id={fieldNames?.UsernameOrEmail}
+                                name={fieldNames?.UsernameOrEmail}
                                 type="email"
                                 {...register('UsernameOrEmail')}
                                 placeholder="m@example.com"
                                 required
                             />
-                            {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
+                            {errors?.[fieldNames?.UsernameOrEmail] && <p className="text-sm text-red-500">{errors?.[fieldNames?.UsernameOrEmail]?.message}</p>}
                         </div>
 
                         <div className="grid gap-2">
                             <div className="flex items-center">
-                                <Label htmlFor="password">{t('password')}</Label>
+                                <Label htmlFor={fieldNames?.Password}>{t('password')}</Label>
                                 <Link
                                     href="#"
                                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
@@ -53,18 +54,19 @@ export const LoginForm = ({ form, onSubmit, isPending, error, className, ...prop
                                 </Link>
                             </div>
                             <Input
-                                id="Password"
+                                id={fieldNames?.Password}
+                                name={fieldNames?.Password}
                                 type="password"
                                 {...register('Password')}
                                 required
                                 autoComplete="off"
                             />
-                            {errors.password && <p className="text-sm text-red-500">{errors.password.message}</p>}
+                            {errors?.[fieldNames?.Password] && <p className="text-sm text-red-500">{errors?.[fieldNames?.Password]?.message}</p>}
                         </div>
 
-                        <div className="flex items-center space-x-2">
-                            <Checkbox id="RememberMe" {...register('RememberMe')} />
-                            <Label htmlFor="rememberMe">{t('rememberMe')}</Label>
+                        <div className="flex items-center space-x-2 cursor-pointer">
+                            <Checkbox id={fieldNames?.RememberMe} name={fieldNames?.RememberMe} {...register('RememberMe')} />
+                            <Label htmlFor={fieldNames?.RememberMe} className='cursor-pointer'>{t('rememberMe')}</Label>
                         </div>
 
                         <Button className="w-full" type="submit" disabled={isPending}>
@@ -72,9 +74,6 @@ export const LoginForm = ({ form, onSubmit, isPending, error, className, ...prop
                             {t('login')}
                         </Button>
 
-                        <Button variant="outline" className="w-full" type="button" asChild>
-                            <Link href="/">{t('goToMainPage')}</Link>
-                        </Button>
 
                         {error && <p className="text-sm text-red-500">{error.message}</p>}
 
