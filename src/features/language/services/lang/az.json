@@ -80,5 +80,9 @@
         "permissions": "İcazələr",
         "settings": "Ayarlar",
         "profile": "Profil"
+    },
+
+    "Banner": {
+        "discoverNow": "İndi kəşf et"
     }
 }

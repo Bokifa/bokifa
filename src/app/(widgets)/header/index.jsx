@@ -9,7 +9,7 @@ export const Header = () => {
             <div className="block min-h-14 border-b border-b-accent">
                 <Announcement />
             </div>
-            <header className='w-full sticky top-0 left-0 min-h-14 border-b border-b-accent bg-white'>
+            <header className='w-full sticky top-0 left-0 min-h-14 border-b border-b-accent bg-white z-50'>
                 <HeaderMain />
                 <HeaderNavbar />
                 

@@ -20,7 +20,6 @@ export const useChangeLanguage = () => {
 			// router.replace(newPath);
 		});
 	};
-	console.log(pathname);
 	
 	return {
 		isPending,

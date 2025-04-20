@@ -10,7 +10,7 @@ export const LanguageSelect = ({defaultLanguage, children, isPending,selectTrigg
 		<Select value={defaultLanguage} {...props}>
 			<SelectTrigger className={cn("cursor-pointer select-none border-none shadow-none")} {...selectTriggerProps}>
 				<SelectValue placeholder={defaultLanguage} defaultValue={defaultLanguage}>
-					{props?.t(defaultLanguage)}
+					{typeof props?.t === 'function' && props?.t(defaultLanguage)}
 				</SelectValue>
 			</SelectTrigger>
 			<SelectContent>

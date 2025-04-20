@@ -83,5 +83,9 @@
 		"permissions": "Permissions",
 		"settings": "Settings",
 		"profile": "Profile"
-	}
+	},
+
+	"Banner": {
+        "discoverNow": "Discover now"
+    }
 }

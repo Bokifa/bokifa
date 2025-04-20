@@ -10,6 +10,8 @@
     --breakpoint-xl: 80rem; /* 1280px — desktops */
     --breakpoint-2xl: 100rem; /* 1600px — large desktops */
     --breakpoint-3xl: 121rem; /* 1920px — 4K monitors */
+
+    --font-fraunces: var(--font-fraunces);
 }
 @theme inline {
     --color-background: var(--background);
@@ -66,7 +68,7 @@
     --primary: oklch(0.723 0.219 149.579); /* #00A9A4 — teal / cyan */
     --primary-foreground: oklch(0.29 0.0644 152.9); /* #3B6968 — dark teal */
 
-    --secondary: oklch(0.967 0.001 286.375); /* #F7F7FA — very light gray-blue */
+    --secondary: oklch(0.97 0.0079 73.74); /* #F7F7FA — very light gray-blue */
     --secondary-foreground: oklch(0.21 0.006 285.885); /* #2C2C33 — dark gray */
 
     --muted: oklch(0.967 0.001 286.375); /* #F7F7FA */
@@ -174,4 +176,8 @@ button {
 
 .custom-bullet-active {
     @apply bg-primary h-2 w-7 rounded-md;
+}
+
+.font-fraunces {
+    font-family: var(--font-fraunces);
 }

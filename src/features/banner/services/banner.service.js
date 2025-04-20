@@ -8,11 +8,11 @@ export const BannerService = {
 		return api(BANNER_ENDPOINTS.getAll(), {
 			next: {
 				tags: ['banner'],
-				revalidate: 120
+				revalidate: 0
 			}
 		})
 	},
-
+	
 	getById: (id) => {
 		return api(BANNER_ENDPOINTS.getById(id))	
 	}

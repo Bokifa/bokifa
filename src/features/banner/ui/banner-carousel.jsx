@@ -17,7 +17,7 @@ export const BannerCarousel = ({ banners }) => {
         bulletActiveClass: 'custom-bullet-active',
     };
     return (
-        <section className="h-9/12 w-screen sm:h-11/12 md:h-full">
+        <section className="h-11/12 w-screen md:h-full min-h-[400px] md:min-h-[530px]">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -25,15 +25,16 @@ export const BannerCarousel = ({ banners }) => {
                     delay: 4000,
                     disableOnInteraction: false,
                 }}
-                speed={500}
+                speed={300}
                 pagination={pagination}
                 navigation={true}
                 grabCursor={true}
+                loop={true}
                 effect={'creative'}
                 creativeEffect={{
                     prev: {
                         shadow: true,
-                        translate: ['-4%', 0, -1],
+                        translate: ['-1%', 0, -1],
                     },
                     next: {
                         translate: ['100%', 0, 0],
@@ -46,9 +47,9 @@ export const BannerCarousel = ({ banners }) => {
                 {banners?.map((bannerItem, i) => (
                         <SwiperSlide
                             key={i}
-                            className="flex items-center justify-center bg-gray-800 text-4xl font-bold text-white"
+                            className="flex items-center justify-center text-4xl font-bold"
                         >
-                            <BannerCarouselItem isActive={activeIndex === i} bannerItem={bannerItem}/>
+                            <BannerCarouselItem activeIndex={activeIndex} itemIndex={i} bannerItem={bannerItem}/>
                         </SwiperSlide>
                     ))}
                 <div className="swiper-pagination mt-4" />

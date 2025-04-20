@@ -81,5 +81,9 @@
         "permissions": "Права доступа",
         "settings": "Настройки",
         "profile": "Профиль"
+    },
+
+    "Banner": {
+        "discoverNow": "Откройте сейчас"
     }
 }
