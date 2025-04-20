@@ -21,10 +21,9 @@ export const MiniStatisticsInfiniteScroll = ({ statistics }) => {
 					}}
 				>
 					{[...Array(6)].flatMap(() => statistics).map((item, index) => (
-						<div className='flex gap-8 items-center text-lg'>
+						<div className='flex gap-8 items-center text-lg' key={`${index}-${item.total}`}>
 							<Image src={IconScroll.src} width={18} height={18} alt='mini-statistics'/>
 							<div
-								key={`${index}-${item.total * index}`}
 								className="flex gap-2"
 							>
 								<span className="text-primary">{item.total}</span>

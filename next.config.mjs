@@ -6,7 +6,15 @@ const withNextIntl = createNextIntlPlugin(
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'ap-bokifa.myshopify.com',
+				pathname: '/cdn/shop/files/**',
+			},
+		],
+	},
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
